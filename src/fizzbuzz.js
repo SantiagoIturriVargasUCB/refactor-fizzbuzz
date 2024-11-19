@@ -1,6 +1,10 @@
+function divisiblePor(numero, divisor) {
+  return numero % divisor === 0;
+}
+
 function calcularFizzBuzzDeUnNumero(numero) {
-  const divisiblePor3 = numero % 3 === 0;
-  const divisiblePor5 = numero % 5 === 0;
+  const divisiblePor3 = divisiblePor(numero, 3);
+  const divisiblePor5 = divisiblePor(numero, 5);
 
   if (divisiblePor3 && divisiblePor5) return "FizzBuzz";
   if (divisiblePor3) return "Fizz";
@@ -17,4 +21,4 @@ function generarSecuenciaFizzBuzz(hastaNumero) {
   return resultadoSecuencia;
 }
 
-export { calcularFizzBuzzDeUnNumero, generarSecuenciaFizzBuzz };
+export { calcularFizzBuzzDeUnNumero, generarSecuenciaFizzBuzz, divisiblePor };
