@@ -1,11 +1,14 @@
 function calcularFizzBuzzDeUnNumero(numero) {
-  if (numero % 3 === 0 && numero % 5 === 0) {
+  const divisiblePor3 = numero % 3 === 0;
+  const divisiblePor5 = numero % 5 === 0;
+
+  if (divisiblePor3 && divisiblePor5) {
     return "FizzBuzz";
   }
-  if (numero % 3 === 0) {
+  if (divisiblePor3) {
     return "Fizz";
   }
-  if (numero % 5 === 0) {
+  if (divisiblePor5) {
     return "Buzz";
   }
   return numero.toString();
