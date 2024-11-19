@@ -1,28 +1,24 @@
-function generarFizzBuzzDe(n) {
-  let fb = "";
-  if (n % 3 === 0 && n % 5 === 0) {
-    fb = "FizzBuzz";
+function calcularFizzBuzzDeUnNumero(numero) {
+  let resultado = "";
+  if (numero % 3 === 0 && numero % 5 === 0) {
+    resultado = "FizzBuzz";
+  } else if (numero % 3 === 0) {
+    resultado = "Fizz";
+  } else if (numero % 5 === 0) {
+    resultado = "Buzz";
   } else {
-    if (n % 3 === 0) {
-      fb = "Fizz";
-    } else {
-      if (n % 5 === 0) {
-        fb = "Buzz";
-      } else {
-        fb = n.toString();
-      }
-    }
+    resultado = numero.toString();
   }
-  return fb;
+  return resultado;
 }
 
-function fizzbuzz(n) {
-  let aux = "";
-  for (let i = 1; i <= n; i++) {
-    aux += generarFizzBuzzDe(i);
-    if (i != n) aux += ", ";
+function generarSecuenciaFizzBuzz(hastaNumero) {
+  let resultadoSecuencia = "";
+  for (let i = 1; i <= hastaNumero; i++) {
+    resultadoSecuencia += calcularFizzBuzzDeUnNumero(i);
+    if (i !== hastaNumero) resultadoSecuencia += ", ";
   }
-  return aux;
+  return resultadoSecuencia;
 }
 
-export { generarFizzBuzzDe, fizzbuzz };
+export { calcularFizzBuzzDeUnNumero, generarSecuenciaFizzBuzz };
